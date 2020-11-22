@@ -18,15 +18,19 @@ knitr::opts_chunk$set(
 library(basmah)
 ```
 
-## Primary Aim
+## The porpuse of my project:
+
 
 My app lets the user explore health care insurance coverage and associate it to various health outcomes.
-The users will be able to explore data series using an interactive R shiny app.
 
-The app provides an interface to the World data bank. 
-I did pre-select eight series for the users to select.
+The users will be able to explore data series using an interactive R Gadget app.
+
+The app provides all the series from the World data bank. 
+
+I did pre-select eight series for the users to select, such as Life expectancy, Current health expenditure per capita and Adjusted net national income,..ets.  
+
 The series will include measures of health insurance, health care accessibility, health outcomes and demographic information. 
-The users can select data series, graphing methods and statistical analysis.
+The users can select data series, graphing methods and regression analysis.
 
 This app helps inform policy makers and tell them how health insurance and health care availability is related to health outcomes.
 
@@ -44,9 +48,11 @@ This app helps inform policy makers and tell them how health insurance and healt
 ## Use the gadget
 
 There is a sample data set called `dd` that can be used to run the app. 
-You can also supply your own data set. 
+The users can also supply their own data set. 
 
 The users need to specify the outcomes and the predictors as I showed below.
+
+Also, the users need to make sure to include shiny, miniUI, dplyr and ggplot2 library to use this functions. 
 
 ```{r,eval=FALSE}
 library(alharbi)
@@ -71,4 +77,38 @@ predictors <- c("NY.ADJ.NNTY.KD.ZG" ,
 
 myGadgetFunc(dd,outcomes, predictors)
 ```
+
+## Challenges:
+
+1. Finding good data series to provide good analysis and graphs.
+2. Design the regression analysis and check if all the series have different analysis.
+3. Connect R Gadget to the data source.
+4. Solve some problem that prevented me to run the R Gadget:
+{#'@title Run a Gadget
+#'@importFrom shiny selectInput sliderInput verbatimTextOutput plotOutput icon h3 renderPlot renderPrint stopApp observeEvent runGadget
+#'@importFrom miniUI gadgetTitleBar miniPage miniTabstripPanel miniTabPanel miniContentPanel
+#'@importFrom ggplot2 ggplot aes geom_smooth geom_point
+#'@importFrom dplyr filter between select
+#'@importFrom stats na.omit
+#'@importFrom rlang sym
+#'
+#'@param dd Input data set
+#'@param outcomes List of outcomes
+#'@param predictors List of predictors} 
+
+5. Learn how to use the Githip.
+6. Connect the Githip to the R Gadget.
+7. If I changed anything in R Gadget, I have to make sure to save that and do some steps to update all the changing in Githip as well.
+
+
+## Future Work and Plans:
+1. The users can find many regression analysis and graphs for each two series they choose.
+2. Make an option to compere between two or three predictors to get the outcomes for all their selected.
+3. Develop the app and provide more options to inform policy makers and tell them how health insurance and health care availability is related to health outcomes
+
+
+
+
+
+
 

@@ -44,6 +44,7 @@ predicters <- c("NY.ADJ.NNTY.KD.ZG" ,
 ```{r}
 dd <- WDI( indicator = series_choices)
 ```
+
 ```{r}
 dd <- dd %>% 
   mutate(country = iconv(country, "latin1", "ASCII", sub=""))
@@ -81,4 +82,6 @@ names
 ```{r}
 usethis::use_data(series_choices, overwrite = TRUE)
 ```
+
+
 
