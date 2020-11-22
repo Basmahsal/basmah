@@ -1,0 +1,74 @@
+---
+title: "Health_Insurance"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Health_Insurance}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(basmah)
+```
+
+## Primary Aim
+
+My app lets the user explore health care insurance coverage and associate it to various health outcomes.
+The users will be able to explore data series using an interactive R shiny app.
+
+The app provides an interface to the World data bank. 
+I did pre-select eight series for the users to select.
+The series will include measures of health insurance, health care accessibility, health outcomes and demographic information. 
+The users can select data series, graphing methods and statistical analysis.
+
+This app helps inform policy makers and tell them how health insurance and health care availability is related to health outcomes.
+
+
+
+## Install the app
+
+```{r}
+# install.packages("devtools")
+#devtools::install_github("Basmahsal/alharbi")
+
+```
+
+
+## Use the gadget
+
+There is a sample data set called `dd` that can be used to run the app. 
+You can also supply your own data set. 
+
+The users need to specify the outcomes and the predictors as I showed below.
+
+```{r,eval=FALSE}
+library(alharbi)
+library(shiny)
+library(miniUI)
+library(dplyr)
+library(ggplot2)
+
+
+
+
+
+outcomes <- c("SH.UHC.NOP2.ZG",
+                  "SH.XPD.CHEX.PP.CD" ,
+                  "SH.XPD.EHEX.PP.CD",
+                  "SH.XPD.OOPC.CH.ZS")
+
+predicters <- c("NY.ADJ.NNTY.KD.ZG" ,
+                "SP.DYN.LE00.IN" ,
+                "SH.XPD.PVTD.PP.CD",
+                "SH.XPD.GHED.PP.CD")
+
+myGadgetFunc(dd,outcomes, predictors)
+```
+
