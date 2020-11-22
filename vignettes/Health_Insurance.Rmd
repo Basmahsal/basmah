@@ -36,7 +36,7 @@ This app helps inform policy makers and tell them how health insurance and healt
 
 ```{r}
 # install.packages("devtools")
-#devtools::install_github("Basmahsal/alharbi")
+#devtools::install_github("Basmahsal/basmah")
 
 ```
 
@@ -64,7 +64,7 @@ outcomes <- c("SH.UHC.NOP2.ZG",
                   "SH.XPD.EHEX.PP.CD",
                   "SH.XPD.OOPC.CH.ZS")
 
-predicters <- c("NY.ADJ.NNTY.KD.ZG" ,
+predictors <- c("NY.ADJ.NNTY.KD.ZG" ,
                 "SP.DYN.LE00.IN" ,
                 "SH.XPD.PVTD.PP.CD",
                 "SH.XPD.GHED.PP.CD")

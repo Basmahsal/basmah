@@ -1,0 +1,84 @@
+---
+title: "Getting data"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+pacman::p_load(gtsummary,tidyverse,janitor,WDI)
+```
+
+
+
+
+```{r}
+series_choices <- c("SH.UHC.NOP2.ZG", 
+                    "SH.XPD.CHEX.PP.CD" ,
+                    "NY.ADJ.NNTY.KD.ZG" ,
+                    "SP.DYN.LE00.IN" ,
+                    "SH.XPD.EHEX.PP.CD",
+                    "SH.XPD.PVTD.PP.CD",
+                    "SH.XPD.GHED.PP.CD",
+                    "SH.XPD.OOPC.CH.ZS")
+```
+
+
+```{r}
+outcomes <- c("SH.UHC.NOP2.ZG", 
+                    "SH.XPD.CHEX.PP.CD" ,
+                    "SH.XPD.EHEX.PP.CD",
+                    "SH.XPD.OOPC.CH.ZS")
+```
+
+
+```{r}
+predicters <- c("NY.ADJ.NNTY.KD.ZG" ,
+                    "SP.DYN.LE00.IN" ,
+                    "SH.XPD.PVTD.PP.CD",
+                    "SH.XPD.GHED.PP.CD")
+```
+
+
+
+
+```{r}
+dd <- WDI( indicator = series_choices)
+```
+```{r}
+dd <- dd %>% 
+  mutate(country = iconv(country, "latin1", "ASCII", sub=""))
+```
+
+```{r}
+usethis::use_data(dd, overwrite = TRUE)
+```
+
+
+```{r}
+country_choices <- 
+  dd %>% 
+  select(country, SH.XPD.CHEX.PP.CD) %>% 
+  na.omit() %>% 
+  select(country) %>% 
+  distinct() %>% 
+  arrange() %>% 
+  pull(country)
+
+
+```
+
+```{r}
+usethis::use_data(country_choices, overwrite = TRUE)
+```
+
+```{r}
+series_choices <- dd %>% 
+select(-country, -year) %>% 
+names
+
+```
+
+```{r}
+usethis::use_data(series_choices, overwrite = TRUE)
+```
+

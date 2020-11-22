@@ -1,0 +1,63 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# basmah
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of basmah is to ...
+
+## Installation
+
+
+And the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("Basmahsal/basmah")
+```
+
+
+## Use the gadget
+
+There is a sample data set called `dd` that can be used to run the app. 
+You can also supply your own data set. 
+
+The users need to specify the outcomes and the predictors as I showed below.
+
+```{r,eval=FALSE}
+library(alharbi)
+library(shiny)
+library(miniUI)
+library(dplyr)
+library(ggplot2)
+
+
+
+
+
+outcomes <- c("SH.UHC.NOP2.ZG",
+                  "SH.XPD.CHEX.PP.CD" ,
+                  "SH.XPD.EHEX.PP.CD",
+                  "SH.XPD.OOPC.CH.ZS")
+
+predictors <- c("NY.ADJ.NNTY.KD.ZG" ,
+                "SP.DYN.LE00.IN" ,
+                "SH.XPD.PVTD.PP.CD",
+                "SH.XPD.GHED.PP.CD")
+
+myGadgetFunc(dd,outcomes, predictors)
+```
