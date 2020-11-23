@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 library(basmah)
 ```
 
-## The porpuse of my project:
+## The purpose of my project:
 
 
 My app lets the user explore health care insurance coverage and associate it to various health outcomes.
@@ -55,7 +55,7 @@ The users need to specify the outcomes and the predictors as I showed below.
 Also, the users need to make sure to include shiny, miniUI, dplyr and ggplot2 library to use this functions. 
 
 ```{r,eval=FALSE}
-library(alharbi)
+library(basmah)
 library(shiny)
 library(miniUI)
 library(dplyr)
