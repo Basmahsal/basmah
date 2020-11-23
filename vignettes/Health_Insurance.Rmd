@@ -27,7 +27,7 @@ The users will be able to explore data series using an interactive R Gadget app.
 
 The app provides all the series from the World data bank. 
 
-I did pre-select eight series for the users to select, such as Life expectancy, Current health expenditure per capita and Adjusted net national income,..ets.  
+I did pre-select eight series for the users to select, such as Life expectancy, Current health expenditure and Adjusted net national income,..ets.  
 
 The series will include measures of health insurance, health care accessibility, health outcomes and demographic information. 
 The users can select data series, graphing methods and regression analysis.
@@ -96,18 +96,15 @@ myGadgetFunc(dd,outcomes, predictors)
 #'@param outcomes List of outcomes
 #'@param predictors List of predictors} 
 
-5. Learn how to use the Githip.
-6. Connect the Githip to the R Gadget.
-7. If I changed anything in R Gadget, I have to make sure to save that and do some steps to update all the changing in Githip as well.
+5. Learn how to use the Github.
+6. Connect the Github to the R Gadget.
+7. If I changed anything in R Gadget, I have to make sure to save that and do some steps to update all the changing in Github as well.
 
 
 ## Future Work and Plans:
 1. The users can find many regression analysis and graphs for each two series they choose.
 2. Make an option to compere between two or three predictors to get the outcomes for all their selected.
 3. Develop the app and provide more options to inform policy makers and tell them how health insurance and health care availability is related to health outcomes
-
-
-
 
 
 
